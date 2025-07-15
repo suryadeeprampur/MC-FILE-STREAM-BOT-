@@ -245,11 +245,11 @@ Nᴀᴍᴇ - {}"""
 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
 
     CAPTION = (
-    f"<b>[ @MOVIECLUB9999 ]</b>\n"
-    f"<b>[ @MC_MOVIES_HD ]</b>\n"
-    f"<b>{file_name}</b>\n\n"
-    f"<b>🎭 Jᴏɪɴ :- @MC_MOVIES_HD</b>\n"
-    f"<b>💠 Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ :- @MOVIECLUB9999</b>"
+        "<b>[ @MOVIECLUB9999 ]</b>\n"
+        "<b>[ @MC_MOVIES_HD ]</b>\n"
+        "<b>{file_name}</b>\n\n"
+        "<b>🎭 Jᴏɪɴ :- @MC_MOVIES_HD</b>\n"
+        "<b>💠 Rᴇǫᴜᴇsᴛ Gʀᴏᴜᴘ :- @MOVIECLUB9999</b>"
     )
 
 
