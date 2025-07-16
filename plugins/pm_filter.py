@@ -1976,6 +1976,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "subscription":
         buttons = [[
+            InlineKeyboardButton("Refer Friends", callback_data="refer_friends"),
             InlineKeyboardButton('⇚Back', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
