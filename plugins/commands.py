@@ -470,7 +470,8 @@ async def start(client, message):
                     return
             if STREAM_MODE == True:
                 button = [[InlineKeyboardButton("📌𝐉𝐎𝐈𝐍 𝐔𝐏𝐃𝐀𝐓𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋📌", url="https://t.me/MC_MOVIES_PVT")
-                    #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')]]
+                    #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')
+                          ]]
                 reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup = None
@@ -534,7 +535,8 @@ async def start(client, message):
                     return
             if STREAM_MODE == True:
                 button = [[InlineKeyboardButton("📌𝐉𝐎𝐈𝐍 𝐔𝐏𝐃𝐀𝐓𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋📌", url="https://t.me/MC_MOVIES_PVT")
-                        #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')]]
+                        #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')
+                          ]]
                 reply_markup=InlineKeyboardMarkup(button)
             else:
                 reply_markup = None
@@ -593,7 +595,8 @@ async def start(client, message):
             return
     if STREAM_MODE == True:
         button = [[InlineKeyboardButton("📌𝐉𝐎𝐈𝐍 𝐔𝐏𝐃𝐀𝐓𝐄 𝐂𝐇𝐀𝐍𝐍𝐄𝐋📌", url="https://t.me/MC_MOVIES_PVT")
-                #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')]]
+                #InlineKeyboardButton('sᴛʀᴇᴀᴍ ᴀɴᴅ ᴅᴏᴡɴʟᴏᴀᴅ', callback_data=f'generate_stream_link:{file_id}')
+                  ]]
         reply_markup=InlineKeyboardMarkup(button)
     else:
         reply_markup = None
