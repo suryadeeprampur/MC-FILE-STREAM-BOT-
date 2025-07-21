@@ -7,9 +7,14 @@ from pyrogram import Client, filters
 from database.users_chats_db import db
 from info import ADMINS
 from utils import broadcast_messages, broadcast_messages_group
-        
+#rdx added 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+#rdx ended
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS))
 async def pm_broadcast(bot, message):
+        search_button = InlineKeyboardMarkup(
+    [[InlineKeyboardButton("Search Here", switch_inline_query_current_chat="")]]
+        )
     b_msg = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     try:
         users = await db.get_all_users()
