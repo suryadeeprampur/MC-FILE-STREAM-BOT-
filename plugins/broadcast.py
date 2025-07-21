@@ -12,9 +12,16 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 #rdx ended
 @Client.on_message(filters.command("broadcast") & filters.user(ADMINS))
 async def pm_broadcast(bot, message):
+       #rdx added start
         search_button = InlineKeyboardMarkup(
     [[InlineKeyboardButton("Search Here", switch_inline_query_current_chat="")]]
         )
+        await message._client.send_message(
+    user_id,
+    text=message.text.markdown,
+    reply_markup=search_button
+        )
+        #rdx added end
     b_msg = await bot.ask(chat_id = message.from_user.id, text = "Now Send Me Your Broadcast Message")
     try:
         users = await db.get_all_users()
