@@ -17,8 +17,7 @@ from database.join_reqs import JoinReqs
 from bs4 import BeautifulSoup
 from shortzy import Shortzy
 #rdx addedd 
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import FloodWait
+
 #rdx ended
 
 logger = logging.getLogger(__name__)
@@ -179,7 +178,12 @@ async def get_poster(query, bulk=False, id=False, file=None):
 
 async def broadcast_messages(user_id, message):
     try:
-        await message.copy(chat_id=user_id)
+        await message.copy(
+            chat_id=user_id,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
+            ])
+        )
         return True, "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
@@ -207,7 +211,6 @@ async def broadcast_messages_group(chat_id, message):
                 [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
             ])
         )
-
         try:
             await kd.pin()
         except:
