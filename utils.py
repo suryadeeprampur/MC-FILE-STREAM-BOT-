@@ -16,6 +16,10 @@ from database.users_chats_db import db
 from database.join_reqs import JoinReqs
 from bs4 import BeautifulSoup
 from shortzy import Shortzy
+#rdx addedd 
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.errors import FloodWait
+#rdx ended
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
@@ -195,13 +199,13 @@ async def broadcast_messages(user_id, message):
     except Exception as e:
         return False, "Error"
 
-async def broadcast_messages(user_id, message):
+async def broadcast_messages_group(chat_id, message):
     try:
-        await message.copy(
-            chat_id=user_id,
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]]
-            )
+        kd = await message.copy(
+            chat_id=chat_id,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
+            ])
         )
 
         try:
