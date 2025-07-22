@@ -197,7 +197,12 @@ async def broadcast_messages(user_id, message):
 
 async def broadcast_messages_group(chat_id, message):
     try:
-        kd = await message.copy(chat_id=chat_id)
+        kd = await message.copy(
+            chat_id=chat_id,
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
+            ])
+        )
         try:
             await kd.pin()
         except:
@@ -208,6 +213,7 @@ async def broadcast_messages_group(chat_id, message):
         return await broadcast_messages_group(chat_id, message)
     except Exception as e:
         return False, "Error"
+
     
 async def search_gagala(text):
     usr_agent = {
