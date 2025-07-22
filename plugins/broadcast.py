@@ -36,9 +36,10 @@ async def pm_broadcast(bot, message):
                     chat_id=user_id,
                     from_chat_id=b_msg.chat.id,
                     message_id=b_msg.id,
-                    reply_markup=InlineKeyboardMarkup(
-                        [[InlineKeyboardButton("🔍 Search", switch_inline_query_current_chat="")]]
-                    )
+                    reply_markup=InlineKeyboardMarkup([
+    [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
+])
+
                 )
                 success += 1
             except Exception as e:
@@ -102,9 +103,10 @@ async def broadcast_group(bot, message):
                 chat_id=group_id,
                 from_chat_id=b_msg.chat.id,
                 message_id=b_msg.id,
-                reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("🔍 Search", switch_inline_query_current_chat="")]]
-                )
+                reply_markup=InlineKeyboardMarkup([
+    [InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT")]
+])
+
             )
             success += 1
         except Exception:
