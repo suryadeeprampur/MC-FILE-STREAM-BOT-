@@ -179,7 +179,7 @@ async def broadcast_messages(user_id, message):
         await message.copy(
             chat_id=user_id,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("🔎 Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
+                [[InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
             )
         )
         return True, "Success"
@@ -206,7 +206,7 @@ async def broadcast_messages_group(chat_id, message):
         kd = await message.copy(
             chat_id=chat_id,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("🔎 Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
+                [[InlineKeyboardButton("Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
             )
         )
         try:
