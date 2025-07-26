@@ -172,10 +172,16 @@ async def get_poster(query, bulk=False, id=False, file=None):
         'rating': str(movie.get("rating")),
         'url':f'https://www.imdb.com/title/tt{movieid}'
     }
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 async def broadcast_messages(user_id, message):
     try:
-        await message.copy(chat_id=user_id)
+        await message.copy(
+            chat_id=user_id,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton("🔎 Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
+            )
+        )
         return True, "Success"
     except FloodWait as e:
         await asyncio.sleep(e.x)
@@ -197,7 +203,12 @@ async def broadcast_messages(user_id, message):
 
 async def broadcast_messages_group(chat_id, message):
     try:
-        kd = await message.copy(chat_id=chat_id)
+        kd = await message.copy(
+            chat_id=chat_id,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton("🔎 Search Here", url="https://t.me/MC_MOVIES_PVT?start=search")]]
+            )
+        )
         try:
             await kd.pin()
         except:
@@ -208,6 +219,7 @@ async def broadcast_messages_group(chat_id, message):
         return await broadcast_messages_group(chat_id, message)
     except Exception as e:
         return False, "Error"
+
     
 async def search_gagala(text):
     usr_agent = {
